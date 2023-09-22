@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-09-2023 a las 20:37:45
+-- Tiempo de generación: 22-09-2023 a las 21:42:58
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -44,6 +44,17 @@ CREATE TABLE `categoria` (
   `nombre_categoria` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`id`, `nombre_categoria`) VALUES
+(1, 'Calzado'),
+(2, 'Remeras'),
+(3, 'Camperas'),
+(4, 'Pantalones'),
+(5, 'Accesorios');
+
 -- --------------------------------------------------------
 
 --
@@ -57,6 +68,23 @@ CREATE TABLE `producto` (
   `precio` float DEFAULT NULL,
   `id_categoria` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`id`, `nombre`, `descripcion`, `precio`, `id_categoria`) VALUES
+(1, 'Zapatillas Deportivas', 'Zapatillas para running', 2000, 1),
+(2, 'Remera Algodón', 'Remera 100% algodón, color blanco', 500, 2),
+(3, 'Campera de Cuero', 'Campera de cuero genuino', 5000, 3),
+(4, 'Jean Clásico', 'Jean azul clásico', 1500, 4),
+(5, 'Cinturón de Cuero', 'Cinturón de cuero genuino', 700, 5),
+(6, 'Sandalias de Playa', 'Sandalias para playa, material goma', 300, 1),
+(7, 'Remera Polo', 'Remera polo, color azul', 700, 2),
+(8, 'Campera de Lluvia', 'Campera impermeable', 1800, 3),
+(9, 'Pantalón de Vestir', 'Pantalón de vestir, color negro', 1300, 4),
+(10, 'Bolso de Mano', 'Bolso de mano para mujeres', 1000, 5),
+(11, 'Zapatillas Deportivas', 'Zapatillas para trekking', 5000, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -95,13 +123,13 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas
