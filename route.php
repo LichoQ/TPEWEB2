@@ -7,6 +7,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require_once 'app/controllers/comercioController.php';
 require_once 'app/controllers/auth.controller.php';
+require_once 'app/controllers/about.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -42,6 +43,11 @@ switch($params[0]) {
     case 'addProducto':
         addProducto($id);
         break; 
+    case 'about':
+        $controller = new AboutController();
+        $controller->showAbout();
+        break;
+    
     default:
         echo '404 - Página no encontrada';
         break;

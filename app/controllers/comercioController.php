@@ -66,4 +66,6 @@ class ComercioController {
         $this->view->mostrarPrueba();
     }
 
+    
+
 }
