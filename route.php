@@ -1,5 +1,12 @@
+
+
+
 <?php
-require_once 'app/comercio.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+require_once 'app/controllers/comercioController.php';
+require_once 'app/controllers/auth.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -24,12 +31,17 @@ if(isset($params[1])) {
 
 //determina que camino seguir según la acción
 switch($params[0]) {
+    case 'login':
+        $controller = new AuthController();
+        $controller->showLogin();
+        break;
     case 'listar':
-        mostrarProductos();
+        $controller = new ComercioController();
+        $controller->listarProductos();
         break;
     case 'addProducto':
         addProducto($id);
-        break;   
+        break; 
     default:
         echo '404 - Página no encontrada';
         break;
