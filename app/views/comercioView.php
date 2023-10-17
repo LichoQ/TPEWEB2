@@ -21,6 +21,8 @@ class ComercioView {
         require_once 'templates/productos_por_categoria.phtml';
     }
 
+   
+
 
 
 

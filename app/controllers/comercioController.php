@@ -78,6 +78,7 @@ class ComercioController {
         $this->view->mostrarProductosPorCategoria($productos, $categorias);
     }
 
+
     
 
 }

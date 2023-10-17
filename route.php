@@ -32,6 +32,7 @@ if(isset($params[1])) {
 
 //determina que camino seguir según la acción
 switch($params[0]) {
+    
     case 'login':
         $controller = new AuthController();
         $controller->showLogin();
