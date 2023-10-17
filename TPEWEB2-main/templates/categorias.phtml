@@ -1,0 +1,33 @@
+<?php require_once 'templates/header.phtml'; ?>
+
+<h1>Bienvenido a nuestra tienda</h1>
+<h2>Categorías de productos</h2>
+
+<div class="container">
+    <div class="row"> 
+        <div class="col-12">
+            <h1>Categorías</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($categorias as $categoria): ?>
+                        <tr>
+                            <td>
+                                <!-- Aquí he agregado un enlace en el nombre de la categoría -->
+                                <a href="productos-por-categoria/<?php echo $categoria->id_categoria; ?>">
+                                    <?php echo $categoria->nombre_categoria; ?>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<?php require_once 'templates/footer.phtml'; ?>
