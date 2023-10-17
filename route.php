@@ -37,6 +37,10 @@ switch($params[0]) {
         $controller = new AuthController();
         $controller->showLogin();
         break;
+    case 'verify':
+        $controller = new ComercioController();
+        $controller->listarProductos();
+        break;
     case 'listado-items':
         $controller = new ComercioController();
         $controller->listarProductos();

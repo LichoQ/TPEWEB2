@@ -24,7 +24,7 @@ class ComercioController {
         $precio = $_POST['precio'];
         $id_categoria = $_POST['id_categoria'];
         $this->model->agregarProducto($nombre, $descripcion, $precio, $id_categoria);
-        header("Location: " . BASE_URL . "home");
+        header("Location: " . BASE_URL . "listado-items");
     }
 
     function borrarProducto($id) {
