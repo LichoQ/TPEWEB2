@@ -28,4 +28,12 @@ class ComercioModel {
         $producto = $sentencia->fetch(PDO::FETCH_OBJ);
         return $producto;
     }
+
+    function filtrarProductos($id_categoria) {
+        $sentencia = $this->db->prepare("SELECT * FROM producto WHERE id_categoria=?");
+        $sentencia->execute(array($id_categoria));
+        $productos = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $productos;
+    }
+    
 }

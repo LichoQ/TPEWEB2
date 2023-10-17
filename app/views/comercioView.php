@@ -17,6 +17,10 @@ class ComercioView {
         require_once 'templates/detalle-item.phtml';
     }
 
+    public function mostrarProductosPorCategoria($productos, $categorias) {
+        require_once 'templates/productos_por_categoria.phtml';
+    }
+
 
 
 

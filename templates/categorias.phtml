@@ -13,14 +13,18 @@
                 <tbody>
                     <?php foreach($categorias as $categoria): ?>
                         <tr>
-                            <td><?php echo $categoria->nombre_categoria; ?></td>
+                            <td>
+                                <!-- Aquí he agregado un enlace en el nombre de la categoría -->
+                                <a href="productos-por-categoria/<?php echo $categoria->id_categoria; ?>">
+                                    <?php echo $categoria->nombre_categoria; ?>
+                                </a>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
     </div>
-
 </div>
 
 <?php require_once 'templates/footer.phtml'; ?>

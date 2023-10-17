@@ -72,6 +72,12 @@ class ComercioController {
         $this->view->mostrarDetalleItem($producto);
     }
 
+    function filtrarProductosCategoria($id_categoria) {
+        $productos = $this->model->filtrarProductos($id_categoria);
+        $categorias = $this->model->listarCategorias();
+        $this->view->mostrarProductosPorCategoria($productos, $categorias);
+    }
+
     
 
 }
