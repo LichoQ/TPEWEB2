@@ -76,12 +76,3 @@ function addProducto() {
 
   
 }
-
-
-
-
-
-
-
-
-

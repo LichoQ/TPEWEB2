@@ -35,5 +35,9 @@ class ComercioModel {
         $productos = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $productos;
     }
-    
+    function agregarProducto($nombre, $descripcion, $precio, $id_categoria){
+        $sentencia = $this->db->prepare("INSERT INTO `producto` ($nombre, $descripcion,
+         $precio, $id_categoria) VALUES(?,?,?,?)");
+        $sentencia->execute([$nombre, $descripcion, $precio, $id_categoria]);
+    }
 }

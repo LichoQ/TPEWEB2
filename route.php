@@ -47,14 +47,15 @@ switch($params[0]) {
         break;
     case 'item-por-categoria':
         $controller = new ComercioController();
-        $controller->filtrarProductosCategoria();
+        $controller->filtrarProductosCategoria($categoria);
         break;
     case 'detalle-item':
         $controller = new ComercioController();
         $controller->detalleProducto($id);
         break;
     case 'addProducto':
-        addProducto($id);
+        $controller = new ComercioController();
+        $controller->agregarProducto();
         break; 
     case 'about':
         $controller = new AboutController();
