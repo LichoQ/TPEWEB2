@@ -28,7 +28,7 @@ class AuthController
         $user = $this->model->getByUsername($username);
         if ($user && password_verify($password, $user->password)) {
             AuthHelper::login($user);
-            header('Location: ' . BASE_URL . 'viajes');
+            header('Location: ' . BASE_URL . 'home');
         } else {
             $this->view->showLogin("User invalido");
         }
