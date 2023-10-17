@@ -44,6 +44,10 @@ switch($params[0]) {
         $controller = new ComercioController();
         $controller->listarCategoria();
         break;
+    case 'detalle-item':
+        $controller = new ComercioController();
+        $controller->detalleProducto($id);
+        break;
     case 'addProducto':
         addProducto($id);
         break; 

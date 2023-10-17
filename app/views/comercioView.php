@@ -13,6 +13,10 @@ class ComercioView {
         require_once 'templates/categorias.phtml';
     }
 
+    public function mostrarDetalleItem($item) {
+        require_once 'templates/detalle-item.phtml';
+    }
+
 
 
 

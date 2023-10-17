@@ -21,4 +21,11 @@ class ComercioModel {
         $categorias = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $categorias;
     }
+
+    function detalleItem($id) {
+        $sentencia = $this->db->prepare("SELECT * FROM producto WHERE id=?");
+        $sentencia->execute(array($id));
+        $producto = $sentencia->fetch(PDO::FETCH_OBJ);
+        return $producto;
+    }
 }

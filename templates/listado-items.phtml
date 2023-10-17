@@ -24,7 +24,7 @@ require_once 'templates/header.phtml'; ?>
                     <?php foreach($productos as $item): ?>
                         <tr>
                             <td><?php echo $item->id; ?></td>
-                            <td><?php echo $item->nombre; ?></td>
+                            <td><a href="detalle-item/<?php echo $item->id; ?>"><?php echo $item->nombre; ?></a></td>
                             <td><?php echo $item->descripcion; ?></td>
                             <td><?php echo $item->precio; ?></td>
                             <td><?php echo $item->id_categoria; ?></td>

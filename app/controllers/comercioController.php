@@ -67,6 +67,11 @@ class ComercioController {
         $this->view->mostrarCategorias($categorias);
     }
 
+    function detalleProducto($id) {
+        $producto = $this->model->detalleItem($id);
+        $this->view->mostrarDetalleItem($producto);
+    }
+
     
 
 }
