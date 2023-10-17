@@ -36,9 +36,13 @@ switch($params[0]) {
         $controller = new AuthController();
         $controller->showLogin();
         break;
-    case 'listar':
+    case 'listado-items':
         $controller = new ComercioController();
         $controller->listarProductos();
+        break;
+    case 'listarCategoria':
+        $controller = new ComercioController();
+        $controller->listarCategoria();
         break;
     case 'addProducto':
         addProducto($id);

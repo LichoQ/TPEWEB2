@@ -62,8 +62,9 @@ class ComercioController {
         $this->view->mostrarProductosPorPrecio($productos, $categorias);
     }
 
-    function prueba() {
-        $this->view->mostrarPrueba();
+    function listarCategoria() {
+        $categorias = $this->model->listarCategorias();
+        $this->view->mostrarCategorias($categorias);
     }
 
     
