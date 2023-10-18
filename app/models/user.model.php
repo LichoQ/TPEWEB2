@@ -3,11 +3,11 @@ class UserModel {
     private $db;
 
     function __construct(){
-        $this->db = new PDO('mysql:host=localhost;dbname=comercio_ropa;charset=utf8', 'root', '');
+        $this->db = new PDO('mysql:host='.MYSQL_HOST.';dbname='.MYSQL_DB.';charset=utf8', MYSQL_USER, MYSQL_PASS);
     }
 
         public function getByUsername ($username){
-            $query= $this->db->prepare('SELECT * FROM users_login WHERE username = ?');
+            $query= $this->db->prepare('SELECT * FROM administrador WHERE username = ?');
             $query->execute([$username]);
         
         return $query->fetch(PDO::FETCH_OBJ);
