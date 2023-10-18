@@ -6,8 +6,9 @@
 <select onchange="location = this.value;">
   <option>Seleccionar Categoría</option>
   <?php foreach ($categorias as $categoria): ?>
-    <option value="tu_url_base/listar-por-categoria/<?php echo $categoria->id; ?>">
-      <?php echo $categoria->nombre; ?>
+    <option value="<?= BASE_URL ?>productos-por-categoria/<?= $categoria->id; ?>">
+    <?= $categoria->nombre; ?>
+
     </option>
   <?php endforeach; ?>
 </select>
@@ -25,10 +26,11 @@
   <tbody>
     <?php foreach ($productos as $producto): ?>
       <tr>
-        <td><?php echo $producto->id; ?></td>
-        <td><?php echo $producto->nombre; ?></td>
-        <td><?php echo $producto->descripcion; ?></td>
-        <td><?php echo $producto->precio; ?></td>
+            <td><?= $producto->id; ?></td>
+            <td><?= $producto->nombre; ?></td>
+            <td><?= $producto->descripcion; ?></td>
+            <td><?= $producto->precio; ?></td>
+
       </tr>
     <?php endforeach; ?>
   </tbody>

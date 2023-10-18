@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 require_once 'templates/header.phtml';
 ?>
@@ -9,10 +6,10 @@ require_once 'templates/header.phtml';
 <div class="container">
     <!-- Sección para mostrar el detalle de un solo ítem -->
     <?php if(isset($item)): ?>
-        <h1>Detalle del Ítem: <?php echo $item->nombre; ?></h1>
-        <p>Descripción: <?php echo $item->descripcion; ?></p>
-        <p>Precio: <?php echo $item->precio; ?></p>
-        <p>Categoría: <?php echo $item->id_categoria; ?> <!-- poner el nombre de la categoría --> </p>
+        <h1>Detalle del Ítem: <?= $item->nombre; ?></h1>
+        <p>Descripción: <?= $item->descripcion; ?></p>
+        <p>Precio: <?= $item->precio; ?></p>
+        <p>Categoría: <?= $item->id_categoria; ?> <!-- poner el nombre de la categoría --> </p>
     <?php endif; ?>
   
 </div>

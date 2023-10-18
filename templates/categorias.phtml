@@ -18,9 +18,10 @@
                         <tr>
                             <td>
                                 <!-- Aquí he agregado un enlace en el nombre de la categoría -->
-                                <a href="productos-por-categoria/<?php echo $categoria->id_categoria; ?>">
-                                    <?php echo $categoria->nombre_categoria; ?>
+                                <a href="productos-por-categoria/<?= $categoria->id_categoria; ?>">
+                                     <?= $categoria->nombre_categoria; ?>
                                 </a>
+
                             </td>
                         </tr>
                     <?php endforeach; ?>

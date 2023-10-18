@@ -23,20 +23,19 @@ require_once 'templates/form_alta.php';?>
                 </thead>
                 <tbody>
                     <?php foreach($productos as $item): ?>
-                        <tr>
-                            <td><?php echo $item->id; ?></td>
-                            <td><a href="detalle-item/<?php echo $item->id; ?>"><?php echo $item->nombre; ?></a></td>
-                            <td><?php echo $item->descripcion; ?></td>
-                            <td><?php echo $item->precio; ?></td>
-                            <td><?php echo $item->id_categoria; ?></td>
-                            <td>
-                            <!-- Botones para editar y eliminar -->
-                            <a href="<?= BASE_URL ?>mostrar-editar-producto/<?= $item->id ?>">Editar</a>
+                            <tr>
+                                <td><?= $item->id; ?></td>
+                                <td><a href="detalle-item/<?= $item->id; ?>"><?= $item->nombre; ?></a></td>
+                                <td><?= $item->descripcion; ?></td>
+                                <td><?= $item->precio; ?></td>
+                                <td><?= $item->id_categoria; ?></td>
+                                <td>
+                                <!-- Botones para editar y eliminar -->
+                                <a href="<?= BASE_URL ?>mostrar-editar-producto/<?= $item->id ?>">Editar</a>
+                                <a href="<?= BASE_URL ?>borrarProducto/<?= $item->id ?>">Eliminar</a>
+                                </td>
+                            </tr>
 
-                            <a href="<?= BASE_URL ?>borrarProducto/<?= $item->id ?>">Eliminar</a>
-
-                            </td>
-                        </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
