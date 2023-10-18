@@ -60,7 +60,7 @@ switch($params[0]) {
         $controller = new ComercioController();
         $controller->filtrarProductosCategoria($categoria);
         break;
-    case 'agreagra-categoria':
+    case 'agregar-categoria':
         $controller = new ComercioController();
         $controller->agregarCategoria();
         break;

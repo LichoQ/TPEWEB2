@@ -28,7 +28,18 @@ class ComercioView {
     public function renderEditarProducto($producto) {
         require_once 'templates/editar-item.phtml';
     }
+
+    //borar categoria
+    public function renderBorrarCategoria($categoria) {
+        require_once 'templates/borrar-categoria.phtml';
+    }
+
+    //agregar categoria
+    public function renderAgregarCategoria() {
+        require_once 'templates/form_agregar_categoria.phtml';
+    }
     
+
 
    
 

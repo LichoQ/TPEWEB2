@@ -18,7 +18,7 @@
             <label for="categoria" class="form-label">Categoría</label>
             <select class="form-control" id="id_categoria" name="categoria" required>
                 <option value="">--Seleccione una categoría--</option>
-                <!-- Aquí puedes insertar las opciones de categoría dinámicamente desde la base de datos -->
+                
     
                 <option value="1">Calzado</option>
                 <option value="2">Remeras</option>

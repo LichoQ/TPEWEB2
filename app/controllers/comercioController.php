@@ -63,11 +63,6 @@ class ComercioController {
         $this->view->renderItemEliminado();
     }
 
-    function agregarCategoria() {
-        $nombre = $_POST['nombre'];
-        $this->model->agregarCategoria($nombre);
-        header("Location: " . BASE_URL . "listarCategoria");
-    }
 
     function borrarCategoria($id) {
         $this->model->borrarCategoria($id);
@@ -85,6 +80,17 @@ class ComercioController {
         $producto = $this->model->detalleItem($id);
         $this->view->mostrarDetalleItem($producto);
     }
+
+    function agregarCategoria() {
+        if (isset($_POST['nombre_categoria'])) {  // Aquí cambiamos 'nombre' por 'nombre_categoria'
+            $nombre_categoria = $_POST['nombre_categoria'];
+            $this->model->agregarCategoria($nombre_categoria);
+            header("Location: " . BASE_URL . "listarCategoria");
+        } else {
+            $this->view->renderAgregarCategoria();
+        }
+    }
+    
 
 
     

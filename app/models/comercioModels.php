@@ -61,7 +61,7 @@ class ComercioModel {
     }
 
     function agregarCategoria($nombre) {
-        $sentencia = $this->db->prepare("INSERT INTO categoria (nombre)VALUES(?)");
+        $sentencia = $this->db->prepare("INSERT INTO categoria (nombre_categoria)VALUES(?)");
         $sentencia->execute([$nombre]);
     }
 
@@ -73,6 +73,7 @@ class ComercioModel {
     function editarCategoria($id, $nombre) {
         $sentencia = $this->db->prepare("UPDATE categoria SET nombre=? WHERE id=?");
         $sentencia->execute([$nombre, $id]);
+
     }
 
 

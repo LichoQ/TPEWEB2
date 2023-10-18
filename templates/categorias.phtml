@@ -7,6 +7,10 @@
     <div class="row"> 
         <div class="col-12">
             <h1>Categorías</h1>
+            <!-- Botón para agregar nueva categoría -->
+            <a href="agregar-categoria" class="btn btn-primary">
+                Agregar nueva categoría
+            </a>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -17,11 +21,22 @@
                     <?php foreach($categorias as $categoria): ?>
                         <tr>
                             <td>
-                                <!-- Aquí he agregado un enlace en el nombre de la categoría -->
-                                <a href="productos-por-categoria/<?= $categoria->id_categoria; ?>">
-                                     <?= $categoria->nombre_categoria; ?>
+                                <!-- Enlace para la categoría -->
+                                <a href="productos-por-categoria/<?= $categoria->id_categoria; ?>" class="btn btn-link">
+                                    <?= $categoria->nombre_categoria; ?>
                                 </a>
-
+                            </td>
+                            <td>
+                                <!-- Botón para editar -->
+                                <a href="<?= BASE_URL ?>mostrar-editar-categoria/<?= $categoria->id_categoria ?>" class="btn btn-warning">
+                                    Editar
+                                </a>
+                            </td>
+                            <td>
+                                <!-- Botón para eliminar -->
+                                <a href="<?= BASE_URL ?>borrarCategoria/<?= $categoria->id_categoria ?>" class="btn btn-danger">
+                                    Eliminar
+                                </a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
