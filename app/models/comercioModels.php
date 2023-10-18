@@ -39,4 +39,13 @@ class ComercioModel {
         $sentencia = $this->db->prepare("INSERT INTO producto (nombre, descripcion, precio, id_categoria)VALUES(?,?,?,?)");
         $sentencia->execute([$nombre, $descripcion, $precio, $id_categoria]);
     }
+
+    function borrarProducto($id) {
+        $sentencia = $this->db->prepare("DELETE FROM producto WHERE id=?");
+        $sentencia->execute([$id]);
+        
+
+    }
+
+    
 }

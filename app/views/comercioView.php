@@ -21,6 +21,10 @@ class ComercioView {
         require_once 'templates/productos_por_categoria.phtml';
     }
 
+    public function renderItemEliminado() {
+        require_once 'templates/item-eliminado.phtml';
+    }
+
    
 
 

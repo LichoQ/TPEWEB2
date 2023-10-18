@@ -68,6 +68,14 @@ switch($params[0]) {
         $controller = new ComercioController();
         $controller->agregarProducto();
         break; 
+    case 'borrarProducto':
+        $controller = new ComercioController();
+        $controller->borrarProducto($id);
+        break;
+    case 'item-eliminado':
+        $controller = new ComercioController();
+        $controller->renderItemEliminado();
+        break;
     case 'about':
         $controller = new AboutController();
         $controller->showAbout();

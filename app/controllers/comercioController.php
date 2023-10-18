@@ -29,7 +29,7 @@ class ComercioController {
 
     function borrarProducto($id) {
         $this->model->borrarProducto($id);
-        header("Location: " . BASE_URL . "home");
+        header("Location: " . BASE_URL . "item-eliminado");
     }
 
     function editarProducto($id) {
@@ -76,6 +76,10 @@ class ComercioController {
         $productos = $this->model->filtrarProductos($id_categoria);
         $categorias = $this->model->listarCategorias();
         $this->view->mostrarProductosPorCategoria($productos, $categorias);
+    }
+
+    function renderItemEliminado() {
+        $this->view->renderItemEliminado();
     }
 
 

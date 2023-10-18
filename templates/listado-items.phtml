@@ -29,6 +29,12 @@ require_once 'templates/form_alta.php';?>
                             <td><?php echo $item->descripcion; ?></td>
                             <td><?php echo $item->precio; ?></td>
                             <td><?php echo $item->id_categoria; ?></td>
+                            <td>
+                            <!-- Botones para editar y eliminar -->
+                            <a href="edit-item/<?= $item->id ?>">Editar</a>
+                            <a href="<?= BASE_URL ?>borrarProducto/<?= $item->id ?>">Eliminar</a>
+
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
