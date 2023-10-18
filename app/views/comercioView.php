@@ -25,6 +25,11 @@ class ComercioView {
         require_once 'templates/item-eliminado.phtml';
     }
 
+    public function renderEditarProducto($producto) {
+        require_once 'templates/editar-item.phtml';
+    }
+    
+
    
 
 

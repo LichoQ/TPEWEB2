@@ -1,11 +1,13 @@
 <?php
+require_once 'config.php';
 
 class ComercioModel {
 
     private $db;
 
     function __construct() {
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=comercio_ropa;charset=utf8', 'root', '');
+        $this->db = new PDO('mysql:host='.MYSQL_HOST.';dbname='.MYSQL_DB.';charset=utf8', MYSQL_USER, MYSQL_PASS);
+
     }
 
     function listarProductos() {
@@ -44,8 +46,36 @@ class ComercioModel {
         $sentencia = $this->db->prepare("DELETE FROM producto WHERE id=?");
         $sentencia->execute([$id]);
         
-
     }
+
+    function editarProducto($id, $nombre, $descripcion, $precio, $id_categoria) {
+        $sentencia = $this->db->prepare("UPDATE producto SET nombre=?, descripcion=?, precio=?, id_categoria=? WHERE id=?");
+        $sentencia->execute([$nombre, $descripcion, $precio, $id_categoria, $id]);
+    }
+
+    function getProductoById($id) {
+        $sentencia = $this->db->prepare("SELECT * FROM producto WHERE id=?");
+        $sentencia->execute([$id]);
+        $producto = $sentencia->fetch(PDO::FETCH_OBJ);
+        return $producto;
+    }
+
+    function agregarCategoria($nombre) {
+        $sentencia = $this->db->prepare("INSERT INTO categoria (nombre)VALUES(?)");
+        $sentencia->execute([$nombre]);
+    }
+
+    function borrarCategoria($id) {
+        $sentencia = $this->db->prepare("DELETE FROM categoria WHERE id=?");
+        $sentencia->execute([$id]);
+    }
+
+    function editarCategoria($id, $nombre) {
+        $sentencia = $this->db->prepare("UPDATE categoria SET nombre=? WHERE id=?");
+        $sentencia->execute([$nombre, $id]);
+    }
+
+
 
     
 }

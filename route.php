@@ -60,6 +60,18 @@ switch($params[0]) {
         $controller = new ComercioController();
         $controller->filtrarProductosCategoria($categoria);
         break;
+    case 'agreagra-categoria':
+        $controller = new ComercioController();
+        $controller->agregarCategoria();
+        break;
+    case 'borrar-categoria':
+        $controller = new ComercioController();
+        $controller->borrarCategoria($id);
+        break;
+    case 'editar-categoria':
+        $controller = new ComercioController();
+        $controller->editarCategoria($id);
+        break;
     case 'detalle-item':
         $controller = new ComercioController();
         $controller->detalleProducto($id);
@@ -75,6 +87,14 @@ switch($params[0]) {
     case 'item-eliminado':
         $controller = new ComercioController();
         $controller->renderItemEliminado();
+        break;
+    case 'editar-item':
+        $controller = new ComercioController();
+        $controller->editarProducto($id);
+        break;
+    case 'mostrar-editar-producto':
+        $controller = new ComercioController();
+        $controller->mostrarEditarProducto($id);
         break;
     case 'about':
         $controller = new AboutController();

@@ -32,20 +32,19 @@ class ComercioController {
         header("Location: " . BASE_URL . "item-eliminado");
     }
 
-    function editarProducto($id) {
-        $producto = $this->model->editarProducto($id);
-        $categorias = $this->model->listarCategorias();
-        $this->view->mostrarEditarProducto($producto, $categorias);
+    function mostrarEditarProducto($id) {
+        $producto = $this->model->getProductoById($id);
+        $this->view->renderEditarProducto($producto);
     }
 
-    function guardarEditarProducto() {
+    function editarProducto($id) {
         $nombre = $_POST['nombre'];
         $descripcion = $_POST['descripcion'];
         $precio = $_POST['precio'];
         $id_categoria = $_POST['id_categoria'];
         $id = $_POST['id'];
-        $this->model->guardarEditarProducto($nombre, $descripcion, $precio, $id_categoria, $id);
-        header("Location: " . BASE_URL . "home");
+        $this->model->editarProducto($nombre, $descripcion, $precio, $id_categoria, $id);
+        header("Location: " . BASE_URL . "listado-items");
     }
 
     function filtrarProductos() {
@@ -55,31 +54,36 @@ class ComercioController {
         $this->view->mostrarProductosPorCategoria($productos, $categorias);
     }
 
-    function filtrarProductosPorPrecio() {
-        $precio = $_POST['precio'];
-        $productos = $this->model->filtrarProductosPorPrecio($precio);
-        $categorias = $this->model->listarCategorias();
-        $this->view->mostrarProductosPorPrecio($productos, $categorias);
-    }
-
     function listarCategoria() {
         $categorias = $this->model->listarCategorias();
         $this->view->mostrarCategorias($categorias);
     }
 
+    function renderItemEliminado() {
+        $this->view->renderItemEliminado();
+    }
+
+    function agregarCategoria() {
+        $nombre = $_POST['nombre'];
+        $this->model->agregarCategoria($nombre);
+        header("Location: " . BASE_URL . "listarCategoria");
+    }
+
+    function borrarCategoria($id) {
+        $this->model->borrarCategoria($id);
+        header("Location: " . BASE_URL . "listarCategoria");
+    }
+
+    function editarCategoria($id) {
+        $nombre = $_POST['nombre'];
+        $id = $_POST['id'];
+        $this->model->editarCategoria($nombre, $id);
+        header("Location: " . BASE_URL . "listarCategoria");
+    }
+
     function detalleProducto($id) {
         $producto = $this->model->detalleItem($id);
         $this->view->mostrarDetalleItem($producto);
-    }
-
-    function filtrarProductosCategoria($id_categoria) {
-        $productos = $this->model->filtrarProductos($id_categoria);
-        $categorias = $this->model->listarCategorias();
-        $this->view->mostrarProductosPorCategoria($productos, $categorias);
-    }
-
-    function renderItemEliminado() {
-        $this->view->renderItemEliminado();
     }
 
 

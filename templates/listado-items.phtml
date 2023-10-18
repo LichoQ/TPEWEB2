@@ -31,7 +31,8 @@ require_once 'templates/form_alta.php';?>
                             <td><?php echo $item->id_categoria; ?></td>
                             <td>
                             <!-- Botones para editar y eliminar -->
-                            <a href="edit-item/<?= $item->id ?>">Editar</a>
+                            <a href="<?= BASE_URL ?>mostrar-editar-producto/<?= $item->id ?>">Editar</a>
+
                             <a href="<?= BASE_URL ?>borrarProducto/<?= $item->id ?>">Eliminar</a>
 
                             </td>
